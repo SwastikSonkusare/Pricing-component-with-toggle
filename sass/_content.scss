@@ -1,1 +1,208 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 75%;     //1rem = 12px
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: hsl(240, 78%, 98%);
+    // background-image: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+    // background-position: right top, left bottom;
+    // background-repeat: no-repeat;
+}
+
+body::before {
+	content: '';
+	background-image: url('../images/bg-top.svg');
+	background-repeat: no-repeat;
+	background-position: top right;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+body::after {
+	content: '';
+	background-image: url('../images/bg-bottom.svg');
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.container {
+    max-width: 120rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color:  hsl(234, 14%, 74%);
+}
+
+.cards {
+    display: flex;
+}
+
+.card {
+    max-width: 50rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: "Montserrat";
+    position: relative;
+    // box-shadow: 0 1rem 1.2rem rgba(0, 0, 0, 0.2);
+    
+    &--1 {
+        transform: translateX(-1.5rem);
+        z-index: 1;
+        max-height: 30rem;
+    }
+    
+    &--3 {
+        transform: translateX(1.5rem);
+        z-index: 1;
+        max-height: 30rem;
+    }
+    
+    &--premium {
+        background-image: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221));
+        transform: scale(1.15);
+        z-index: 10;
+    }
+
+    &__header {
+        color:  hsl(234, 14%, 74%);
+        font-size: 1.3rem;
+        font-family: inherit;
+        font-weight: 700;
+        text-align: center;
+        
+        &--premium {
+            color:  #fff;           
+        }
+
+    }
+
+    &__price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: hsl(232, 13%, 33%);
+        font-family: inherit;
+        font-weight: 700;
+
+        &--dollar {
+            font-size: 2rem; 
+            font-family: inherit;  
+            margin-right: .3rem;
+
+            &-premium {
+                color: #fff;
+            }
+        }
+        
+        &--money {
+            font-size: 4.5rem;
+            font-family: inherit; 
+            
+            &-premium {
+                color: #fff;
+            }
+        }
+    }
+
+    &__features {
+        list-style: none;
+        text-align: center;
+        border-top: 1px solid hsl(234, 14%, 74%);
+        border-bottom: 1px solid hsl(234, 14%, 74%);
+    }
+
+    &__item {
+        padding: 1rem 4rem;
+        color: hsl(234, 14%, 74%);
+        font-family: inherit;
+        font-weight: 700;
+
+        &--premium {
+            color: #fff;
+        }
+        
+        &:not(:last-of-type) {
+            border-bottom: 1px solid hsl(234, 14%, 74%);
+        }
+    }
+
+    &__button {
+        width: 100%;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 4px;
+        padding: .8rem 6.2rem;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 1rem;
+        color: #fff;
+        background-image: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221));   
+
+        &--premium {
+            background-color: #fff;
+            background-image: none;
+            color: hsl(233, 13%, 49%);
+        }
+    }
+}
+
+
+//Utilites helper classes
+
+.mb-sm {
+    margin-bottom: 1rem;
+}
+.mb-md {
+    margin-bottom: 2rem;
+}
+.mb-xl {
+    margin-bottom: 3rem;
+}
+.mb-xxl {
+    margin-bottom: 4rem;
+}
+
+.mt-sm {
+    margin-top: 1rem;
+}
+.mt-md {
+    margin-top: 2rem;
+}
+.mt-xl {
+    margin-top: 3rem;
+}
+.mt-xxl {
+    margin-top: 4rem;
+}

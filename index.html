@@ -1,53 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/style.css">
-  
-  <title>Frontend Mentor | [Challenge Name Here]</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | [Challenge Name Here]</title>
 
-  Our Pricing
-  Annually
-  Monthly
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-xl">Our Pricing</h1>
+      <span class="mb-xl">Annually Monthly</span>
 
-  Basic
-  &dollar;19.99
-  &dollar;199.99
-  500 GB Storage
-  2 Users Allowed
-  Send up to 3 GB
-  Learn More
+      <main class="cards mt-xl">
+        <div class="card card--1">
+          <div class="card__header mb-sm">Basic</div>
 
-  Professional
-  &dollar;24.99
-  &dollar;249.99
-  1 TB Storage
-  5 Users Allowed
-  Send up to 10 GB
-  Learn More
+          <div class="card__price mb-md">
+            <span class="card__price--dollar"> &dollar; </span>
+            <span class="card__price--money"> 19.99</span>
+          </div>
 
-  Master
-  &dollar;39.99
-  &dollar;399.99
-  2 TB Storage
-  10 Users Allowed
-  Send up to 20 GB
-  Learn More
-  
-  <div class="attribution">
+          <ul class="card__features mb-md">
+            <li class="card__item">500 GB Storage</li>
+            <li class="card__item">2 Users Allowed</li>
+            <li class="card__item">Send up to 3 GB</li>
+          </ul>
+
+          <button class="card__button mt-sm">Learn More</button>
+        </div>
+
+        <div class="card card--premium">
+          <div class="card__header card__header--premium mb-sm mt-sm">Professional</div>
+
+          <div class="card__price mb-md">
+            <span class="card__price--dollar card__price--dollar-premium"> &dollar;</span>
+            <span class="card__price--money card__price--money-premium"> 24.99</span>
+          </div>
+
+          <ul class="card__features mb-md">
+            <li class="card__item card__item--premium">1 TB Storage</li>
+            <li class="card__item card__item--premium">5 Users Allowed</li>
+            <li class="card__item card__item--premium">Send up to 10 GB</li>
+          </ul>
+
+          <button class="card__button card__button--premium">Learn More</button>
+        </div>
+
+        <div class="card card--3">
+          <div class="card__header mb-sm">Master</div>
+
+          <div class="card__price mb-md">
+            <span class="card__price--dollar"> &dollar;</span>
+            <span class="card__price--money"> 39.99</span>
+          </div>
+
+          <ul class="card__features mb-md">
+            <li class="card__item">2 TB Storage</li>
+            <li class="card__item">10 Users Allowed</li>
+            <li class="card__item">Send up to 20 GB</li>
+          </ul>
+
+          <button class="card__button mt-sm">Learn More</button>
+        </div>
+      </main>
+    </div>
+
+    <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  </div> -->
+  </body>
 </html>

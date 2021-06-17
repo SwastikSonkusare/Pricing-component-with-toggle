@@ -1,17 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
 
 html {
-    font-size: 62.5%;
-    min-height: 100vh;
-}
+  font-size: 75%; }
 
 body {
-    box-sizing: border-box;
-    min-height: 100vh;
-}
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6fe; }
+
+body::before {
+  content: '';
+  background-image: url("../images/bg-top.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+
+body::after {
+  content: '';
+  background-image: url("../images/bg-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+
+.container {
+  max-width: 120rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+h1 {
+  color: #b3b5c6; }
+
+.cards {
+  display: flex; }
+
+.card {
+  max-width: 50rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: "Montserrat";
+  position: relative; }
+  .card--1 {
+    transform: translateX(-1.5rem);
+    z-index: 1;
+    max-height: 30rem; }
+  .card--3 {
+    transform: translateX(1.5rem);
+    z-index: 1;
+    max-height: 30rem; }
+  .card--premium {
+    background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+    transform: scale(1.15);
+    z-index: 10; }
+  .card__header {
+    color: #b3b5c6;
+    font-size: 1.3rem;
+    font-family: inherit;
+    font-weight: 700;
+    text-align: center; }
+    .card__header--premium {
+      color: #fff; }
+  .card__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #494c5f;
+    font-family: inherit;
+    font-weight: 700; }
+    .card__price--dollar {
+      font-size: 2rem;
+      font-family: inherit;
+      margin-right: .3rem; }
+      .card__price--dollar-premium {
+        color: #fff; }
+    .card__price--money {
+      font-size: 4.5rem;
+      font-family: inherit; }
+      .card__price--money-premium {
+        color: #fff; }
+  .card__features {
+    list-style: none;
+    text-align: center;
+    border-top: 1px solid #b3b5c6;
+    border-bottom: 1px solid #b3b5c6; }
+  .card__item {
+    padding: 1rem 4rem;
+    color: #b3b5c6;
+    font-family: inherit;
+    font-weight: 700; }
+    .card__item--premium {
+      color: #fff; }
+    .card__item:not(:last-of-type) {
+      border-bottom: 1px solid #b3b5c6; }
+  .card__button {
+    width: 100%;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    padding: .8rem 6.2rem;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    background-image: linear-gradient(to right, #a3a8f0, #696fdd); }
+    .card__button--premium {
+      background-color: #fff;
+      background-image: none;
+      color: #6d708d; }
+
+.mb-sm {
+  margin-bottom: 1rem; }
+
+.mb-md {
+  margin-bottom: 2rem; }
+
+.mb-xl {
+  margin-bottom: 3rem; }
+
+.mb-xxl {
+  margin-bottom: 4rem; }
+
+.mt-sm {
+  margin-top: 1rem; }
+
+.mt-md {
+  margin-top: 2rem; }
+
+.mt-xl {
+  margin-top: 3rem; }
+
+.mt-xxl {
+  margin-top: 4rem; }
