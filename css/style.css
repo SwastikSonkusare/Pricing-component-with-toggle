@@ -8,8 +8,12 @@
 
 html {
   font-size: 75%; }
+  @media only screen and (max-width: 31.25em) {
+    html {
+      font-size: 65%; } }
 
 body {
+  padding: 3rem;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   min-height: 100vh;
@@ -17,6 +21,9 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f6f6fe; }
+  @media only screen and (max-width: 50em) {
+    body {
+      background-image: none; } }
 
 body::before {
   content: '';
@@ -29,6 +36,9 @@ body::before {
   height: 100%;
   width: 100%;
   z-index: -1; }
+  @media only screen and (max-width: 50em) {
+    body::before {
+      background-image: none; } }
 
 body::after {
   content: '';
@@ -41,6 +51,9 @@ body::after {
   height: 100%;
   width: 100%;
   z-index: -1; }
+  @media only screen and (max-width: 50em) {
+    body::after {
+      background-image: none; } }
 
 .container {
   max-width: 120rem;
@@ -49,14 +62,18 @@ body::after {
   align-items: center; }
 
 h1 {
-  color: #b3b5c6; }
+  color: #494c5f; }
 
 .cards {
   display: flex; }
+  @media only screen and (max-width: 50em) {
+    .cards {
+      flex-direction: column; } }
 
 .card {
   max-width: 50rem;
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  margin-bottom: 2rem;
   background-color: #fff;
   border: none;
   border-radius: 4px;
@@ -65,17 +82,31 @@ h1 {
   .card--1 {
     transform: translateX(-1.5rem);
     z-index: 1;
-    max-height: 30rem; }
+    min-height: 30rem; }
+    @media only screen and (max-width: 50em) {
+      .card--1 {
+        transform: translateX(0);
+        z-index: 0; } }
   .card--3 {
     transform: translateX(1.5rem);
     z-index: 1;
-    max-height: 30rem; }
+    min-height: 30rem; }
+    @media only screen and (max-width: 50em) {
+      .card--3 {
+        transform: translateX(0);
+        z-index: 0; } }
   .card--premium {
     background-image: linear-gradient(to right, #a3a8f0, #696fdd);
     transform: scale(1.15);
     z-index: 10; }
+    @media only screen and (max-width: 50em) {
+      .card--premium {
+        transform: scale(1);
+        z-index: 0; } }
+  .card--premium > * {
+    transform: scale(0.869); }
   .card__header {
-    color: #b3b5c6;
+    color: #494c5f;
     font-size: 1.3rem;
     font-family: inherit;
     font-weight: 700;
@@ -124,11 +155,54 @@ h1 {
     font-weight: 700;
     font-size: 1rem;
     color: #fff;
-    background-image: linear-gradient(to right, #a3a8f0, #696fdd); }
+    background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+    cursor: pointer; }
+    .card__button:hover {
+      background-color: #fff;
+      background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border: 1px solid linear-gradient(to right, #a3a8f0, #696fdd) !important; }
     .card__button--premium {
       background-color: #fff;
-      background-image: none;
-      color: #6d708d; }
+      background: linear-gradient(to right, #a3a8f0, #696fdd);
+      -webkit-background-clip: text;
+      background-clip: text; }
+      .card__button--premium:hover {
+        background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+        border: 1px solid white;
+        color: #fff;
+        background-clip: none; }
+
+.toggle {
+  display: flex;
+  align-items: center; }
+  .toggle .toggle-btn {
+    padding: .2rem;
+    margin: 0 1.5rem;
+    width: 4.5rem;
+    height: 2.6rem;
+    background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer; }
+    .toggle .toggle-btn .inner-circle {
+      border-radius: 50%;
+      width: 2.2rem;
+      height: 2.2rem;
+      background-color: #fff; }
+
+.toggle-btn.active .inner-circle {
+  margin-left: auto; }
+
+.toggle-btn.active {
+  background-image: linear-gradient(to right, rgba(163, 168, 240, 0.7), rgba(105, 111, 221, 0.7)); }
+
+small {
+  color: #b3b5c6;
+  font-family: inherit;
+  font-weight: 700; }
 
 .mb-sm {
   margin-bottom: 1rem; }
