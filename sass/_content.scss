@@ -29,7 +29,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     background-color: hsl(240, 78%, 98%);
     // background-image: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
     // background-position: right top, left bottom;
@@ -38,11 +38,11 @@ body {
     @media only screen and (max-width: 50em) {
         background-image: none;
     }
-
+    
 }
 
 body::before {
-	content: '';
+    content: '';
 	background-image: url('../images/bg-top.svg');
 	background-repeat: no-repeat;
 	background-position: top right;
@@ -59,7 +59,7 @@ body::before {
 }
 
 body::after {
-	content: '';
+    content: '';
 	background-image: url('../images/bg-bottom.svg');
 	background-repeat: no-repeat;
 	background-position: bottom left;
@@ -69,7 +69,7 @@ body::after {
 	height: 100%;
 	width: 100%;
 	z-index: -1;
-
+    
     @media only screen and (max-width: 50em) {
         background-image: none;
     }
@@ -77,9 +77,11 @@ body::after {
 
 .container {
     max-width: 120rem;
+    padding: 0 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 h1 {
@@ -91,6 +93,7 @@ h1 {
 
     @media only screen and (max-width: 50em) {
         flex-direction: column;
+        width: 70vw;
     }
 }
 
@@ -220,25 +223,29 @@ h1 {
         
         &:hover {
             background-color: #fff;
-            background-image: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221));   
+            // background-image: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221));   
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            border: 1px solid $linear-gradient !important;
-
+            border-style: solid;
+            border-width: 2px;
+            border-image: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221)) 4;
+            
         }
         
         &--premium {
-            background-color: #fff;
-            background: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221));   
-            -webkit-background-clip: text;
-            background-clip: text;
+            // background-image: none;
+            // background-image: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221));   
+            // color: unset;
+            
             
             &:hover {
                 background-image: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221));   
                 border: 1px solid white;
-                color: #fff;
-                background-clip: none;
+                // background: #fff;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         }
     }

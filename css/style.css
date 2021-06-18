@@ -57,9 +57,11 @@ body::after {
 
 .container {
   max-width: 120rem;
+  padding: 0 3rem;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  overflow: hidden; }
 
 h1 {
   color: #494c5f; }
@@ -68,7 +70,8 @@ h1 {
   display: flex; }
   @media only screen and (max-width: 50em) {
     .cards {
-      flex-direction: column; } }
+      flex-direction: column;
+      width: 70vw; } }
 
 .card {
   max-width: 50rem;
@@ -159,21 +162,18 @@ h1 {
     cursor: pointer; }
     .card__button:hover {
       background-color: #fff;
-      background-image: linear-gradient(to right, #a3a8f0, #696fdd);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      border: 1px solid linear-gradient(to right, #a3a8f0, #696fdd) !important; }
-    .card__button--premium {
-      background-color: #fff;
-      background: linear-gradient(to right, #a3a8f0, #696fdd);
+      border-style: solid;
+      border-width: 2px;
+      border-image: linear-gradient(to right, #a3a8f0, #696fdd) 4; }
+    .card__button--premium:hover {
+      background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+      border: 1px solid white;
       -webkit-background-clip: text;
-      background-clip: text; }
-      .card__button--premium:hover {
-        background-image: linear-gradient(to right, #a3a8f0, #696fdd);
-        border: 1px solid white;
-        color: #fff;
-        background-clip: none; }
+      background-clip: text;
+      -webkit-text-fill-color: transparent; }
 
 .toggle {
   display: flex;
