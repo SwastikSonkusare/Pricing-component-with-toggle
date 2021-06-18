@@ -15,6 +15,7 @@ $linear-gradient: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221
 
 html {
     font-size: 75%;     //1rem = 12px
+    min-height: 100vh;
 
     @media only screen and (max-width: 31.25em) {
         font-size: 65%;
@@ -22,10 +23,10 @@ html {
 }
 
 body {
+    min-height: 100vh;
     padding: 3rem;
     font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,12 +77,11 @@ body::after {
 }
 
 .container {
-    max-width: 120rem;
+    min-width: 90vw;
     padding: 0 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 
 h1 {
@@ -142,7 +142,7 @@ h1 {
     }
 
     &--premium > * {
-        transform: scale(0.869);
+        transform: scale(0.9);
     }
 
     &__header {
@@ -189,8 +189,8 @@ h1 {
     &__features {
         list-style: none;
         text-align: center;
-        border-top: 1px solid hsl(234, 14%, 74%);
-        border-bottom: 1px solid hsl(234, 14%, 74%);
+        border-top: 2px solid hsl(234, 14%, 74%);
+        border-bottom: 2px solid hsl(234, 14%, 74%);
     }
 
     &__item {
@@ -204,7 +204,7 @@ h1 {
         }
         
         &:not(:last-of-type) {
-            border-bottom: 1px solid hsl(234, 14%, 74%);
+            border-bottom: 2px solid hsl(234, 14%, 74%);
         }
     }
 
@@ -234,20 +234,26 @@ h1 {
         }
         
         &--premium {
-            // background-image: none;
-            // background-image: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221));   
-            // color: unset;
             
+            background: white;
             
             &:hover {
-                background-image: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221));   
                 border: 1px solid white;
-                // background: #fff;
+            }
+
+            &:hover &-text {
+                color: white;
+                background-image: none;
+            }
+            
+            &-text {
+                background-image: linear-gradient(to right,rgb(163, 168, 240), rgb(105, 111, 221));   
                 -webkit-background-clip: text;
                 background-clip: text;
-                -webkit-text-fill-color: transparent;
+                -webkit-text-fill-color: transparent; 
             }
         }
+
     }
 }
 
